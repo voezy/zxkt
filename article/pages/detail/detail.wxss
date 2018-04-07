@@ -1,0 +1,11 @@
+/* pages/detail/detail.wxss */
+.article-share-btn {
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+  width: 70rpx;
+  height: 70rpx;
+  background-image: url("https://cloud-minapp-1131.cloud.ifanrusercontent.com/1eNFg1HrAVjWkrNQ.png");
+  background-size: 70rpx 70rpx;
+  border: 0 !important;
+}

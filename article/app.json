@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "看文章",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "white"
+  }
+}

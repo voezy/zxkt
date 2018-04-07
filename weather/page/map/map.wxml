@@ -1,0 +1,4 @@
+<!--page/map/map.wxml-->
+<view class="map-container">
+<map latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindmarkertap="switchCity" scale='8' />
+</view>

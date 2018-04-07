@@ -1,0 +1,30 @@
+<!--page/index/index.wxml-->
+<view>
+  <view>
+    <view class="weatherImg-container">
+      <image  src='{{ weatherImg }}'  mode='widthFix' class='weatherImg'></image>
+    </view>
+
+    <view>
+      <view>
+        <view>
+          <view class="data-row">
+              <view class="data-label">城市:</view>
+              <input class="data" type="text" disabled="{{true}}" value="{{city}}" name="city"></input> 
+          </view>
+
+          <view class="data-row">
+              <view class="data-label">天气情况: </view> 
+              <input class="data" type="text" disabled="{{true}}" value="{{weather}}" name="latitude"></input>
+          </view>
+
+          <view  class="data-row">
+              <view class="data-label">气温: </view> 
+              <input class="data" type="text" disabled="{{true}}" value="{{temperature}}°" name="name"></input>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

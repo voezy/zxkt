@@ -1,0 +1,72 @@
+<!--page/index.wxml-->
+<view wx:if="{{!isShowMedicalCard}}" class='createBtn-container'>
+  <button class='createBtn' size="mini" bindtap="showMedicalCard">创建医疗急救卡</button>
+</view>
+<view wx:else>
+  <form class='data-form' bindsubmit='formSubmit'>
+    <view class="data">
+      <view>姓名: </view>
+      <input name="name" placeholder='请输入姓名' value='{{ form.name }}' placeholder-class></input>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="data">
+      <view>性别: </view>
+      <radio-group name="gender">
+        <label><radio value='男' checked='{{ form.gender === "男" }}'>男</radio></label>
+        <label><radio value='女' checked='{{ form.gender === "女" }}'>女</radio></label>
+      </radio-group>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="data">
+      <view>血型: </view>
+      <picker name="bloodType" value='{{ form.bloodType }}' bindchange='bloodTypeChange' range='{{ bloodTypes }}'>
+        <view>当前选择: {{ bloodTypes[index] }}</view>
+      </picker>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="data">
+      <view>选择医疗情况: </view>
+      <checkbox-group name="medicalConditions">
+        <label>
+        <!-- 这个判断医疗情况的代码写的不太好，先凑合着 -->
+          <checkbox wx:for="{{ medicalConditions }}" wx:key="{{ index }}" value="{{ item.name }}" checked='{{ item.checked }}'>{{ item.name }}</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="data">
+      <view>填写服药情况: </view>
+      <textarea name="medicationCompliance" value='{{ form.medicationCompliance }}' placeholder='请填写服药情况' auto-height='true'></textarea>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="data">
+      <view>是否为器官捐献者: </view>
+      <switch name="isOrganDonor" checked='{{ form.isOrganDonor }}'></switch>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="data">
+      <view>紧急联系人电话号码: </view>
+      <input name="phoneNumber" type="number" value='{{ form.phoneNumber }}' bindinput="phoneNumberChange" placeholder='请输入紧急联系人电话' placeholder-class />
+      <button size='mini' bindtap='makePhoneCall'>拨打紧急联系人号码</button>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="data data-submit">
+      <button size='mini' form-type='submit' hidden='{{ isShowUpdate }}'>提交</button>
+      <button size='mini' form-type='submit' hidden='{{ !isShowUpdate }}'>更新</button>
+    </view>
+  </form>
+</view>
