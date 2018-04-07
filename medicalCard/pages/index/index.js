@@ -81,7 +81,7 @@ Page({
    */
   onLoad: function (options) {
     console.log('(onLoad)\n')
-    wx.setStorageSync('cureCardData', '')// 清空数据
+    // wx.setStorageSync('cureCardData', '')// 清空数据
     let localForm = wx.getStorageSync('cureCardData')
     if (localForm != '') {
       console.log('存在数据，获取本地医疗卡数据成功\n--------')
